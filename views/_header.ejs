@@ -1,0 +1,46 @@
+<header id="navbar-main">
+    <nav class="navbar">
+        <div id="logo">
+            
+            <a id="brand" href="/">
+                <img src="/images/pcell.png" width="180" height="65" alt="logo">
+            </a>
+        </div>
+
+
+        <ul id="tag-link">
+            <% if (locals.user){ %>
+                <li class="after">
+                    <a href="/users/profile">
+                        <!-- <a href="/users/profile/<%= user.id %>"></a> -->
+                        <span id="profile">Profile </span>
+                        <span id="pro-hidden"><%= user.name %></span>                           
+                       
+                    </a>
+                </li>
+                <li class="after">
+                    <a class="" href="/student"> Create Student </a>
+                  </li>
+                  <li class="after">
+                    <a class="" href="/interview"> Create Interview </a>
+                  </li>
+                  <li class="after">
+                    <a class="" href="/download"> Download </a>
+                  </li>
+                <li class="after"> 
+                    <a href="/users/sign-out">Sign Out</a>
+                </li>
+                <% }else{ %>
+                    <li class="before">
+                        <a href="/users/sign-in">Sign In</a>
+                    </li>
+                    <li class="before">
+                        <a href="/users/sign-up">Sign Up</a>
+                    </li>
+                    <% } %>
+        </ul>
+
+    </nav>
+</header>
+
+<script src="../js/index.js"></script>

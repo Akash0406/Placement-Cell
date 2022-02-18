@@ -1,0 +1,72 @@
+
+<div id="form-container">
+
+  <div class="container">
+    <h1>Create Student</h1>
+    <form action="/student/create" method="POST">
+      
+      <div class="form__group field">
+        <input type="text" name="name" class="form-control form__field" placeholder="Name" aria-label="Name">
+        <label for="name"  class="form__label">Name</label>
+      </div>
+      <div class="form__group field">
+        <input type="email" name="email" class="form-control form__field" placeholder="Email" aria-label="Email">
+        <label for="email"  class="form__label">Email</label>
+      </div>
+      <div class="form__group field">
+        <input type="text" name="college" class="form-control form__field" placeholder="College" aria-label="College">
+        <label for="college"  class="form__label">College</label>
+      </div>
+      <div class="form__group field">
+        <input type="number" name="DSAFinal_score" class="form-control form__field" placeholder="DSA Final Score" aria-label="DSA Final Score">
+        <label for="DSAFinal_score"  class="form__label">DSA</label>
+      </div>
+      <div class="form__group field">
+        <input type="number" name="WebDFinal_score" class="form-control form__field" placeholder="WebD Final Score" aria-label="WebD Final Score">
+        <label for="WebDFinal_score"  class="form__label">WEB DEV</label>
+      </div>
+      <div class="form__group field">
+        <input type="number" name="ReactFinal_score" class="form-control form__field" placeholder="React Final Score" aria-label="React Final Score">
+        <label for="ReactFinal_score"  class="form__label">REACT</label>
+      </div>
+      <div class="form__group field">
+        <input type="text" name="Batch" class="form-control form__field" placeholder="Batch" aria-label="Batch">
+        <label for="Batch"  class="form__label">BATCH</label>
+      </div>
+      <button class="button-28" type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+
+<div id="List-Data">
+    <h1>List of All Students</h1>
+
+    <table class="table">
+        <thead>
+          <tr class="table-row">
+            <th class="table-row table-h" scope="col">Batch</th>
+            <th class="table-row table-h" scope="col">Name</th>
+            <th class="table-row table-h" scope="col">Email</th>
+            <th class="table-row table-h" scope="col">College</th>
+            <th class="table-row table-h" scope="col">DSA Marks</th>
+            <th class="table-row table-h" scope="col">WebD Marks</th>
+            <th class="table-row table-h" scope="col">React Marks</th>
+          </tr>
+        </thead>
+        <%for(student of student){%>
+        <tbody>
+            <tr>
+              <th class="table-data-th table-h" scope="row"><%=student.Batch%></th>
+              <td class="table-data table-h"><%=student.name%></td>
+              <td class="table-data table-h"><%=student.email%></td>
+              <td class="table-data table-h"><%=student.college%></td>
+              <td class="table-data table-h"><%=student.DSAFinal_score%></td>
+              <td class="table-data table-h"><%=student.WebDFinal_score%></td>
+              <td class="table-data table-h"><%=student.ReactFinal_score%></td>
+            </tr>
+        </tbody>
+        <%}%>
+    </table>    
+</div>

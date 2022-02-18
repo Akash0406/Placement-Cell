@@ -1,0 +1,51 @@
+<div id="form-container">
+<div class="container">
+    <h1>Create Interview</h1>
+    <form class="form" action="/interview/create" method="POST">
+        <div class="form__group field">
+        <input type="text" name="company" class="form-control form__field" placeholder="Company Name" aria-label="Company Name"/>
+        <label for="company"  class="form__label">Company Name</label>
+    </div>
+        <div class="form__group field">
+        <input type="date" name="date" class="form-control form__field" placeholder="Interview Date" aria-label="Interview Date"/>
+    </div>
+        <button type="submit" class="button-28">Submit</button>
+    </form>
+</div>
+</div>
+<div id="List-Data">
+    <h1>List of All Company</h1>
+    <table class="table">
+    <thead>
+        <tr>
+        <th class="table-row table-h" scope="col">Company Name</th>
+        <th class="table-row table-h" scope="col">Date of Interview</th>
+        <th class="table-row table-h" scope="col">Allocate Students</th>
+        </tr>
+    </thead>
+    <%for(interview of interviews){%>
+    <tbody>
+        <tr>
+        <th class="table-data table-h" scope="row"><%=interview.company%></th>
+        <td class="table-data table-h"><%=interview.date%></td>
+        <td class="table-data table-h">
+            <div class="dropdown">
+            <span class="dropbtn">Allocate Students</span>
+            <div class="dropdown-content">
+                <%for(student of students){%>
+                <a
+                href="/interview/allocate/?s=<%=student._id%>&i=<%=interview._id%>"
+                ><%=student.name%></a
+                >
+                <%}%>
+            </div>
+            </div>
+        </td>
+        <td class="table-data detail">
+            <a href="/interview/allocatedStudents/?i=<%=interview._id%>">Details</a>
+        </td>
+        </tr>
+    </tbody>
+    <%}%>
+    </table>
+</div>

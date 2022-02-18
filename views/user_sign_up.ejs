@@ -1,0 +1,28 @@
+
+
+<div id="signup-main">
+    <div id="signaup-contaioner" class="container">
+        <h1>Sign Up</h1>
+    
+        <form action="/users/create" method="POST">
+            <div class="form__group field">
+                <input type="text" name="name" class="form__field" id="name" placeholder="your name" required>
+                <label for="name"  class="form__label">Name</label>
+            </div>
+            <div class="form__group field">
+                <input type="email" name="email" class="form__field" placeholder="your email" required>
+                <label for="email"  class="form__label">Email</label>
+            </div>
+
+            <div class="form__group field">
+                <input type="password" name="password" class="form__field" placeholder="Enter Password" required>
+                <label for="password"  class="form__label">Password</label>
+            </div>
+            <div class="form__group field">
+                <input type="password" name="confirm_password" class="form__field" placeholder="confirm password" required>
+                <label for="confirm_password"  class="form__label">Confirm Password</label>
+            </div>
+            <input type="submit" class="button-28" value="Sign Up">
+        </form>
+    </div>
+</div>

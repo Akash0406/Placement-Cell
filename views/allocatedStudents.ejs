@@ -1,0 +1,57 @@
+<div id="allot-main">
+
+<h1>List of Allocated Students for Company</h1>
+<table class="table">
+  <thead class="thead">
+    <tr>
+      <th scope="col">Batch</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">College</th>
+      <th scope="col">DSA Marks</th>
+      <th scope="col">WebD Marks</th>
+      <th scope="col">React Marks</th>
+      <th scope="col">Result</th>
+    </tr>
+  </thead>
+  <%for(student of interview){%>
+  <tbody>
+    <tr>
+      <th scope="row"><%=student.StudentId.Batch%></th>
+      <td><%=student.StudentId.name%></td>
+      <td><%=student.StudentId.email%></td>
+      <td><%=student.StudentId.college%></td>
+      <td><%=student.StudentId.DSAFinal_score%></td>
+      <td><%=student.StudentId.WebDFinal_score%></td>
+      <td><%=student.StudentId.ReactFinal_score%></td>
+      <td><%=student.result%></td>
+      <!-- for updating result -->
+      <td>
+        <div class="dropdown">
+          <button class="dropbtn">Update Result</button>
+          <div class="dropdown-content">
+            <a
+              href="/interview/result/?s=<%=student.StudentId.email%>&i=<%=student.companyId.company%>&value=PASS"
+              >PASS</a
+            >
+            <a
+              href="/interview/result/?s=<%=student.StudentId.email%>&i=<%=student.companyId.company%>&value=FAIL"
+              >FAIL</a
+            >
+            <a
+              href="/interview/result/?s=<%=student.StudentId.email%>&i=<%=student.companyId.company%>&value=On-Hold"
+              >On-Hold</a
+            >
+            <a
+              href="/interview/result/?s=<%=student.StudentId.email%>&i=<%=student.companyId.company%>&value=Not-Attempted"
+              >Not-Attempted</a
+            >
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+  <%}%>
+</table>
+
+</div>

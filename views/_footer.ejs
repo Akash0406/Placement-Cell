@@ -1,0 +1,21 @@
+
+<footer id="layout-footer">
+    <div id="rights">
+        <p> &#169;XArceus. NO Rights Reserved</p>
+    </div>
+    <ul id="imp-link">
+        <li>
+            <a href="/">Home</a>
+        </li>
+        <li>
+            <% if(locals.user != null) { %> 
+            <a href="/users/profile/">Profile</a>
+            <% }else{ %> 
+<a href="/users/sign-in/">LogIn</a>
+                <% } %> 
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/in/xarceus0406/">About</a>
+        </li>
+    </ul>
+</footer>

@@ -1,0 +1,40 @@
+
+<div id="home-main">
+    <div class="container">
+
+        <% if (locals.user){ %>
+            
+                <a class="button-28" href="/users/profile">
+                    <!-- <a href="/users/profile/<%= user.id %>"></a> -->
+                    <span id="profile">Profile </span>
+                    <span id="pro-hidden"><%= user.name %></span>                           
+                </a>
+            
+                <a class="button-28" href="/student"> Create Student </a>
+              
+              
+                <a  class="button-28" href="/interview"> Create Interview </a>
+              
+              
+                <a  class="button-28" href="/download"> Download </a>
+             
+            
+                <a  class="button-28" href="/users/sign-out">Sign Out</a>
+            
+
+            <% }else { %> 
+        <div>
+            <a class="button-28" href="/users/sign-in">Sign In</a>
+        </div>
+
+        <div>
+            <a class="button-28" href="/users/sign-up">Sign Up</a>
+        </div>
+        <% } %> 
+    </div>
+
+
+    <div>
+
+    </div>
+</div>
